@@ -1,0 +1,8 @@
+<h1><%= @property.title %></h1>
+
+<p><%= @property.description %></p>
+<p><%= number_to_currency(@property.price) %> per night</p>
+<p>Location: <%= @property.location %></p>
+
+<%= link_to 'Edit', edit_property_path(@property) %> |
+<%= link_to 'Back', properties_path %>

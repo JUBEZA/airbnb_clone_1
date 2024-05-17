@@ -1,0 +1,13 @@
+<h1>Properties</h1>
+
+<%= link_to 'New Property', new_property_path %>
+
+<ul>
+  <% @properties.each do |property| %>
+    <li>
+      <%= link_to property.title, property_path(property) %>
+      <p><%= property.description %></p>
+      <p><%= number_to_currency(property.price) %> per night</p>
+    </li>
+  <% end %>
+</ul>
