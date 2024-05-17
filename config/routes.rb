@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :reviews, only: [:create, :new]
   end
 
-  resources :bookings, only: [:index, :show, :update, :destroy]
-  resources :reviews, only: [:index, :show, :update, :destroy]
+  resources :bookings, only: [:index, :show, :edit, :update, :destroy]
+  resources :reviews, only: [:index, :show, :edit, :update, :destroy]
+
+  root to: 'properties#index'
 end

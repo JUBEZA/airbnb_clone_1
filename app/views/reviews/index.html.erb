@@ -1,0 +1,16 @@
+<h1>My Reviews</h1>
+
+<% if @reviews.any? %>
+  <ul>
+    <% @reviews.each do |review| %>
+      <li>
+        <%= link_to "Review ##{review.id}", review_path(review) %> -
+        Property: <%= review.property.title %> -
+        Rating: <%= review.rating %>
+        <p><%= review.comment %></p>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>You have no reviews.</p>
+<% end %>

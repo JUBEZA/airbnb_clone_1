@@ -1,0 +1,16 @@
+<h1>My Bookings</h1>
+
+<% if @bookings.any? %>
+  <ul>
+    <% @bookings.each do |booking| %>
+      <li>
+        <%= link_to "Booking ##{booking.id}", booking_path(booking) %> -
+        Property: <%= booking.property.title %> -
+        Total Price: <%= number_to_currency(booking.total_price) %>
+        <p>From: <%= booking.start_date %> To: <%= booking.end_date %></p>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>You have no bookings.</p>
+<% end %>
