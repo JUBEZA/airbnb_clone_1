@@ -9,5 +9,11 @@ Rails.application.routes.draw do
   resources :bookings, only: [:index, :show, :edit, :update, :destroy]
   resources :reviews, only: [:index, :show, :edit, :update, :destroy]
 
+  namespace :api do
+    namespace :v1 do
+      resources :properties, only: [:index, :show]
+    end
+  end
+
   root to: 'properties#index'
 end
