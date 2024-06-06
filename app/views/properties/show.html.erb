@@ -1,8 +1,16 @@
-<h1><%= @property.title %></h1>
-
-<p><%= @property.description %></p>
-<p><%= number_to_currency(@property.price) %> per night</p>
-<p>Location: <%= @property.location %></p>
-
-<%= link_to 'Edit', edit_property_path(@property) %> |
-<%= link_to 'Back', properties_path %>
+<div class="container mt-5">
+  <h1><%= @property.title %></h1>
+  <div class="row">
+    <div class="col-md-8">
+      <img src="https://via.placeholder.com/750x300" class="img-fluid" alt="<%= @property.title %>">
+      <p class="mt-4"><%= @property.description %></p>
+    </div>
+    <div class="col-md-4">
+      <h3>Booking Details</h3>
+      <p><strong>Price per Night:</strong> <%= number_to_currency(@property.price) %></p>
+      <p><strong>Location:</strong> <%= @property.location %></p>
+      <%= link_to 'Edit', edit_property_path(@property), class: 'btn btn-secondary' %> |
+      <%= link_to 'Back', properties_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>
