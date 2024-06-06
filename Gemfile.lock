@@ -283,6 +283,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers (~> 0.10.0)
+  autoprefixer-rails
   bootsnap
   bootstrap (~> 5.2)
   capybara
